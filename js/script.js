@@ -14,7 +14,30 @@ project 1 - A Random Quote Generator
   Add the `year` property to at least one object in the array.
   Use console.log() to log your array of quotes to the console.
 ***/
-
+var quotes = [
+	{
+		quote : "Twenty years from now you will be more disappointed by the things that you didn’t do than by the ones you did do.",
+		source : "Mark Twain",
+		year : 1970
+	},
+	{
+		quote : "Great minds discuss ideas; average minds discuss events; small minds discuss people.",
+		source : "Eleanor Roosevelt"
+	},
+	{
+		quote : "Those who dare to fail miserably can achieve greatly.",
+		source : "John F. Kennedy"
+	},
+	{
+		quote : "Test 1",
+		source : ""
+	},
+	{
+		quote : "Test 2",
+		source : ""
+	}
+		
+];
 
 
 
@@ -23,10 +46,11 @@ project 1 - A Random Quote Generator
    - Create a variable to store a random number 
    - Cse the random number to `return` a random quote object from the `quotes` array.
 ***/
-
-
-
-
+var getRandomQuote = function(){
+	var randomNumber = Math.floor(Math.random() * quotes.length - 1) + 1;
+	console.log(randomNumber);
+	return quotes[randomNumber];
+}
 /***
   Create the `printQuote` function to: 
    - Call the `getRandomQuote` function and assign it to a variable.
