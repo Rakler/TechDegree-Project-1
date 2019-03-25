@@ -18,24 +18,29 @@ var quotes = [
 	{
 		quote : "Twenty years from now you will be more disappointed by the things that you didn’t do than by the ones you did do.",
 		source : "Mark Twain",
-		year : 1970
+		year : 1970,
+		tags: ["Philosophical", "Life advice"]
 	},
 	{
 		quote : "Great minds discuss ideas; average minds discuss events; small minds discuss people.",
 		source : "Eleanor Roosevelt",
-		citation : "brainyquote.com"
+		citation : "brainyquote.com",
+		tags: ["Humor", "Inspirational"]
 	},
 	{
 		quote : "Those who dare to fail miserably can achieve greatly.",
-		source : "John F. Kennedy"
+		source : "John F. Kennedy",
+		tags: ["Inspirational", "Life advice"]
 	},
 	{
 		quote : "The memories we make with our family is everything.",
-		source : "Candace Cameron Bure"
+		source : "Candace Cameron Bure",
+		tags: ["Compassion", "Family"]
 	},
 	{
 		quote : "The bond that links your true family is not one of blood, but of respect and joy in each other's life",
-		source : "Richard Bach"
+		source : "Richard Bach",
+		tags: ["Family", "Compassion"]
 	}
 		
 ];
@@ -43,13 +48,17 @@ var quotes = [
 
 
 /***
-  Create the `getRandomQuote` function to:
-   - Create a variable to store a random number 
-   - Cse the random number to `return` a random quote object from the `quotes` array.
+  The getRandomQuote function is responsible to find a random number inbetween 1 and the length of the array, "quotes".
+   - var randomNumber is resonsible for storing the random number that is computed. For this purpose, we make use of Math.random to get a random number and Math.floor to get a rounded number. 
+   - We then return a random qoute from the "quotes" array based on the random number generated, and stored in the variable "randomNumber".
 ***/
 var getRandomQuote = function(){
+	//Calculate and store a whole random number.
 	var randomNumber = Math.floor(Math.random() * quotes.length - 1) + 1;
+	
 	console.log(randomNumber);
+	
+	//return a random quote from the quotes array by using the random number.
 	return quotes[randomNumber];
 }
 /***
@@ -68,6 +77,7 @@ var printQuote = function(){
 	var randomQuote = getRandomQuote();
 	var str = '';
 	
+	
 	str += '<p class="quote">' + randomQuote.quote + '</p>>';
 	str += '<p class="source">' + randomQuote.source;
 	
@@ -76,7 +86,12 @@ var printQuote = function(){
 	}else if(typeof randomQuote.year != 'undefined'){
 		str += '<span class="year">' + randomQuote.year + '</span>';
 	}
+	str += '</p>';
+	str += '<p class="tags"> Tags: ';
 	
+	if(typeof randomQuote.tags != 'undefined'){
+		str += randomQuote.tags.join(", ");
+	}
 	str += '</p>';
 	document.getElementById("quote-box").innerHTML = str;
 	console.log(str);
