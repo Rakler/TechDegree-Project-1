@@ -22,19 +22,20 @@ var quotes = [
 	},
 	{
 		quote : "Great minds discuss ideas; average minds discuss events; small minds discuss people.",
-		source : "Eleanor Roosevelt"
+		source : "Eleanor Roosevelt",
+		citation : "brainyquote.com"
 	},
 	{
 		quote : "Those who dare to fail miserably can achieve greatly.",
 		source : "John F. Kennedy"
 	},
 	{
-		quote : "Test 1",
-		source : ""
+		quote : "The memories we make with our family is everything.",
+		source : "Candace Cameron Bure"
 	},
 	{
-		quote : "Test 2",
-		source : ""
+		quote : "The bond that links your true family is not one of blood, but of respect and joy in each other's life",
+		source : "Richard Bach"
 	}
 		
 ];
@@ -63,10 +64,25 @@ var getRandomQuote = function(){
    - Don't forget to close that final `p` tag.
    - Set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
-
-
-
-
+var printQuote = function(){
+	var randomQuote = getRandomQuote();
+	var str = '';
+	
+	str += '<p class="quote">' + randomQuote.quote + '</p>>';
+	str += '<p class="source">' + randomQuote.source;
+	
+	if(typeof randomQuote.citation != 'undefined'){
+		str += '<span class="citation">' + randomQuote.citation + '</span>';
+	}else if(typeof randomQuote.year != 'undefined'){
+		str += '<span class="year">' + randomQuote.year + '</span>';
+	}
+	
+	str += '</p>';
+	document.getElementById("quote-box").innerHTML = str;
+	console.log(str);
+	return str;
+}
+printQuote();
 /***
   When the "Show another quote" button is clicked, the event listener 
   below will be triggered, and it will call, or "invoke", the `printQuote` 
