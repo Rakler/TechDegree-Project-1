@@ -79,6 +79,16 @@ var printQuote = function(){
 	str += '</p>';
 	document.getElementById("quote-box").innerHTML = str;
 	console.log(str);
+	
+	//Generate random background color
+	var x = Math.floor(Math.random() * 256);
+	var y = Math.floor(Math.random() * 256);
+	var z = Math.floor(Math.random() * 256);
+	
+	var backgroundColor = 'rgb(' + x + ',' + y + ',' + z + ')';
+	
+	document.body.style.background = backgroundColor;
+	
 	return str;
 	
 }
