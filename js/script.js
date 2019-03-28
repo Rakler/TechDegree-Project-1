@@ -81,6 +81,7 @@ var printQuote = function(){
 	console.log(str);
 	
 	//Generate random background color
+	//Code adapted from: https://www.w3resource.com/javascript-exercises/javascript-math-exercise-40.php
 	var x = Math.floor(Math.random() * 256);
 	var y = Math.floor(Math.random() * 256);
 	var z = Math.floor(Math.random() * 256);
