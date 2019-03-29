@@ -62,7 +62,7 @@ var printQuote = function(){
 	var str = '';
 	
 	
-	str += '<p class="quote">' + randomQuote.quote + '</p>>';
+	str += '<p class="quote">' + randomQuote.quote + '</p>';
 	str += '<p class="source">' + randomQuote.source;
 	
 	if(typeof randomQuote.citation != 'undefined'){
